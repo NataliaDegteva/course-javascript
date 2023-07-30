@@ -12,8 +12,8 @@
 
  Другими словами: функция должна возвращать в неизменном виде то, что поступает ей на вход
  */
-function returnFirstArgument(first argument) {
-  return first argument;
+function returnFirstArgument(firstArgument) {
+  return firstArgument;
 }
 
 
@@ -76,8 +76,8 @@ function returnCounter(i=0) {
  Пример:
    returnArgumentsArray(1, 2, 3) вернет [1, 2, 3]
  */
-function returnArgumentsArray(...arguments) {
-  return arguments;
+function returnArgumentsArray(...numbers) {
+  return numbers;
 }
 
 export {
