@@ -22,15 +22,15 @@
  */
 function isAllTrue(array, fn) {
   if (!Array.isArray(array) || array.length === 0) {
-    throw new Error ('empty array')
+    throw new Error('empty array');
   }
 
   if (typeof fn !== 'function') {
-    throw new Error ('fn is not function')
+    throw new Error('fn is not a function');
   }
 
-  for (const elem of array) {
-    if (!fn(elem)) {
+  for (const el of array) {
+    if (!fn(el)) {
       return false;
     }
   }
@@ -86,7 +86,7 @@ function isSomeTrue(array, fn) {
  */
 function returnBadArguments(fn, ...args) {
   if (typeof fn !=="function") {
-    throw new error ("fn is not a function")
+    throw new Error ("fn is not a function")
   }
   const badArgs = [];
   for (const arg of args) {
@@ -127,20 +127,24 @@ function returnBadArguments(fn, ...args) {
  */
 function calculator(number=0) {
   if (typeof number!== "number") {
-    throw new error ("Number is not a number");
+    throw new Error ("number is not a number");
   }
   return {
     sum(...args) {
-      return args.reduce((all, current) => all+current, number);},
+      return args.reduce((all, current) => all + current, number);
+    },
     dif(...args) {
-      return args.reduce((all, current) => all - current, number);},
+      return args.reduce((all, current) => all - current, number);
+    },
     div(...args) {
-        if (args.some(a => a===0)) {
-          throw new error ("division by 0");}
-         return args.reduce((all, current) => all/current, number);}
+        if (args.some(a => a === 0)) {
+          throw new Error ("division by 0");
+        }
+         return args.reduce((all, current) => all / current, number);
+        },
          
      mul(...args) {
-          return args.reduce((all,current) => all*current, number);
+          return args.reduce((all,current) => all * current, number);
         },
         }
       }

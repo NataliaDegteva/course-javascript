@@ -1,5 +1,7 @@
 /* ДЗ 2 - работа с массивами и объектами */
 
+import { clear } from "console";
+
 /*
  Задание 1:
 
@@ -26,12 +28,12 @@ function forEach(array, fn) {
    console.log(newArray); // выведет [1, 4, 9]
  */
 function map(array, fn) {
-  const firstArray = [2,4,6];
+  const newArray = [];
 
   for (const [ix, el] of array.entries()) {
-    firstArray.push(fn(ix, el, array))
+    newArray.push(fn(el, ix, array));
   }
-  return firstArray;
+  return newArray;
 }
 
 /*
@@ -68,8 +70,8 @@ function reduce(array, fn, initial) {
    const keys = upperProps({ name: 'Сергей', lastName: 'Петров' });
    console.log(keys) // выведет ['NAME', 'LASTNAME']
  */
-function upperProps(x) {
-  return Object.keys(x).map(y => y.toUpperCase)
+function upperProps(obj) {
+  return Object.keys(obj).map(k => k.toUpperCase())
 }
 
 export { forEach, map, reduce, upperProps };
