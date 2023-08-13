@@ -1,6 +1,5 @@
 /* ДЗ 4 - работа с DOM */
 
-import { ECDH } from "crypto";
 
 /*
  Задание 1:
@@ -52,11 +51,11 @@ function prepend(what, where) {
 function findAllPSiblings(where) {
   const nextP = [];
   for(const el of where.children) {
-    if (el.nextElementSibiling && el.nextElementSibiling.tagName === 'p') {
+    if (el.nextElementSibling && el.nextElementSibling.tagName === 'P') {
       nextP.push(el);
     }
   }
-  return nextP
+  return nextP;
 }
 
 /*
@@ -133,7 +132,7 @@ function collectDOMStat(root) {
   const stat = {
     tags: {},
     classes: {},
-    texts: {}
+    texts: 0,
   };
 
   function scan(root) {
@@ -158,6 +157,7 @@ function collectDOMStat(root) {
       }
     }
     scan(root);
+
     return stat;
   }
 
